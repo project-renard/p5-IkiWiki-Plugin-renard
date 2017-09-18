@@ -1,0 +1,18 @@
+---
+renard:
+  document: Language_of_Anatomy.pdf
+  page: 7
+---
+
+[[!renard action=render]]
+
+- Relative direction
+    - Relative to the midline of the body
+        - Medial: towards the midline
+        - Lateral: away from the midline
+        - usage: X is medial to Y (relative)
+    - Relative to the origin of a body part (e.g., attachment of a limb to the trunk)
+        - Proximal: closer to origin
+        - Distal: further from origin
+        - usage: e.g., Aorta origin is at heart so the aorta in the thoracic cavity is proximal
+          relative to the distal aorta in the abdomen.
