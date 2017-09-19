@@ -1,7 +1,6 @@
 ---
-renard:
-  document: Language_of_Anatomy.pdf
-  page: 7
+RenardDocument: Language_of_Anatomy.pdf
+RenardPage: 7
 ---
 
 [[!renard action=render]]

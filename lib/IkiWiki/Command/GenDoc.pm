@@ -78,9 +78,8 @@ method run(@) {
 		$page_doc->parent->mkpath;
 		$page_doc->spew(<<EOF);
 ---
-renard:
-  document: $doc_name
-  page: $page_num
+RenardDocument: $doc_name
+RenardPage: $page_num
 ---
 
 [[!renard action=render]]

@@ -91,14 +91,17 @@ sub preprocess (@) {
 	$params{included} = ($params{page} ne $params{destpage});
 	my $css_prefix = $params{page} =~ s,[^A-Za-z0-9-],,gr;
 
-	$params{renard} //= IkiWiki::Plugin::field::field_get_value('renard',
+	$params{renard}{document} //= IkiWiki::Plugin::field::field_get_value('RenardDocument',
 		$config{preview_path} // $params{page});
 
-	error "renard plugin fields not configured" unless $params{renard};
+	$params{renard}{page} //= IkiWiki::Plugin::field::field_get_value('RenardPage',
+		$config{preview_path} // $params{page});
 
-	$params{renard}{_compute}{document}    = srcfile($params{renard}->{document});
-	$params{renard}{_compute}{page}{first} = $params{renard}->{page};
-	$params{renard}{_compute}{page}{last}  =  $params{renard}->{page};
+	error "renard plugin fields not configured" unless $params{renard}{document};
+
+	$params{renard}{_compute}{document}    = srcfile($params{renard}{document});
+	$params{renard}{_compute}{page}{first} = $params{renard}{page};
+	$params{renard}{_compute}{page}{last}  =  $params{renard}{page};
 
 	my $style = '';
 	my $output = '';
