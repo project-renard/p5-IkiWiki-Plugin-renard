@@ -65,7 +65,7 @@ EOF
 
 sub import {
 	hook(type => "getsetup", id => "renard", call => \&getsetup);
-	hook(type => "preprocess", id => "renard", call => \&preprocess, scan => 1);
+	hook(type => "preprocess", id => "renard", call => \&preprocess, scan => 0);
 
 	IkiWiki::loadplugin("field");
 
