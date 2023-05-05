@@ -6,7 +6,6 @@ use strict;
 use IkiWiki 3.00;
 
 use Env qw(@PATH);
-use Alien::pdf2htmlEX;
 use Renard::Block::Format::PDF::Document;
 use Alien::Poppler;
 use Capture::Tiny qw(capture);
@@ -69,7 +68,6 @@ sub import {
 
 	IkiWiki::loadplugin("field");
 
-	push @PATH, Alien::pdf2htmlEX->bin_dir;
 	push @PATH, Alien::Poppler->bin_dir;
 }
 
