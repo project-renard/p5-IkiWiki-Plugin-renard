@@ -7,7 +7,7 @@ use MooX::Lsub;
 use CLI::Osprey;
 use List::AllUtils qw(first);
 
-use Renard::Incunabula::Format::PDF::Document;
+use Renard::Block::Format::PDF::Document;
 use YAML::XS qw(LoadFile);
 
 option setup => (
@@ -60,7 +60,7 @@ method run(@) {
 
 	die "filename @{[ $self->document ]} not found in search dirs @{ $self->search_dirs }" unless $filename;
 
-	my $doc = Renard::Incunabula::Format::PDF::Document->new(
+	my $doc = Renard::Block::Format::PDF::Document->new(
 		filename => $filename,
 	);
 	my $pages = $doc->number_of_pages;

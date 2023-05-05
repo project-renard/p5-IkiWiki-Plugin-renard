@@ -6,8 +6,8 @@ use strict;
 use IkiWiki 3.00;
 
 use Env qw(@PATH);
-use Renard::Incunabula::Format::PDF::Document;
 use Alien::pdf2htmlEX;
+use Renard::Block::Format::PDF::Document;
 use Alien::Poppler;
 use Capture::Tiny qw(capture);
 
@@ -200,7 +200,7 @@ sub mutool {
 
         my $urltobase = $params{preview} ? undef : $params{destpage};
 
-	my $renard_doc = Renard::Incunabula::Format::PDF::Document->new(
+	my $renard_doc = Renard::Block::Format::PDF::Document->new(
 		filename => $params{renard}{_compute}{document},
 	);
 
